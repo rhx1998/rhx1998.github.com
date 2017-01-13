@@ -1,13 +1,1 @@
----
-layout: default
----
-
-<body>
-  <div class="index-wrapper">
-    <div class="aside">
-      <div class="info-card">
-        <h1>RHX1998</h1>
-      </div>
-    </div>
-  </div>	
-</body>
+##RHX1998
