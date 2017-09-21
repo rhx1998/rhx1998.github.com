@@ -5,14 +5,19 @@ layout: default
 <body class="body-post">
 
   <div class="post-wrapper">
-	<span class="bg s_ipt_wr quickdelete-wrap">
-	<span class="soutu-btn"></span>
-	<input id="kw" name="wd" class="s_ipt" value="" maxlength="255" autocomplete="off">
-	<a href="javascript:;" id="quickdelete" title="清空" class="quickdelete" style="top: 0px; right: 0px; display: none;">
-	</a>
-	</span>
-	<span class="bg s_btn_wr"><input type="submit" id="su" value="搜索" class="bg s_btn"></span>
-    <h1 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
+	<script>
+  (function() {
+    var cx = '009885434213830488313:us60fyr4p-i';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+	</script>
+	<gcse:search></gcse:search>
+	<h1 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
     <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
     {{ content }}
     {% include disqus.html %}
