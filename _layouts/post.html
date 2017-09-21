@@ -1,22 +1,17 @@
 ---
 layout: default
 ---
-
+<head>
+	<script language = "JavaScript">
+	function openSearchWin() {
+		windown.open('search.html', 'title', 'width = 700, height = 500, toolbar = no, menubar = no, scrollbars = yes');
+	}
+	</script>
+</head>
 <body class="body-post">
 
   <div class="post-wrapper">
-	<script>
-  (function() {
-    var cx = '009885434213830488313:us60fyr4p-i';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-	</script>
-	<gcse:search></gcse:search>
+	<label> <input type = "button" name = "Submit" value = "搜索" onClick = "openSearchWin()"> </label>
 	<h1 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
     <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
     {{ content }}
