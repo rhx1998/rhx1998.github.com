@@ -44,7 +44,7 @@ using namespace std;
 ll n, H, ans = 0x7f7f7f7f7f7f7f7f;
 bool check(ll h) {
     ll need, ret;
-    if (h > H) {
+    if(h > H) {
         need = (ll)(1.0 * (h + H) * (h - H + 1) / 2 + 1.0 * (h + 1) * h / 2 - h);
         ret = h - H + h;
     }
@@ -52,21 +52,21 @@ bool check(ll h) {
         need = (ll)(1.0 * (h + 1) * h / 2);
         ret = h;
     }
-    if (need > n) return false;
+    if(need > n) return false;
     ll last = n - need;
     ret += last / h + (last % h > 0);
-    if (ret <= ans) {
+    if(ret <= ans) {
         ans = ret;
         return true;
     }
     return false;
 }
 int main() {
-    std::cin >> n >> H;
+    scin >> n >> H;
     ll l = 1, r = int(2e9) + 7, mid;
-    while (l <= r) {
+    while(l <= r) {
         mid = l + r >> 1;
-        if (check(mid)) l = mid + 1;
+        if(check(mid)) l = mid + 1;
         else r = mid - 1;
     }
     printf("%lld\n", ans);
