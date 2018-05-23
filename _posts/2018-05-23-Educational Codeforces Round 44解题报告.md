@@ -4,9 +4,9 @@ title: Educational Codeforces Round 44解题报告
 category: blog
 description: DEFG个人解题报告
 ---
-贪心一下，画画图就好了
-## D.Sand Fortress
 
+## D.Sand Fortress
+贪心一下，画画图就好了
 ```
 #include <bits/stdc++.h>
 typedef long long ll;
