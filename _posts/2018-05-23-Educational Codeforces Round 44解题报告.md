@@ -8,17 +8,48 @@ description: DEFG个人解题报告
 ## D.Sand Fortress
 贪心一下，画画图就好了
 ```
-#include <bits/stdc++.h>
-typedef long long ll;
+/*
+ * Author:  JiangYu
+ * Created Time:  2018/5/23 21:57:32
+ * File Name: D.cpp
+ */
+#include <iostream>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <cmath>
+#include <algorithm>
+#include <string>
+#include <vector>
+#include <stack>
+#include <queue>
+#include <set>
+#include <map>
+#include <time.h>
+using namespace std;
+#define ll long long
+#define MP make_pair
+#define PB push_back
+#define X first
+#define Y second
+#define FI first
+#define SE second
+#define inf 0x3f3f3f3f
+#define FOR(i,a,b) for(int i = a; i <= b; ++i)
+#define FORD(i,a,b) for(int i = b; i >= a; --i)
+#define ALL(x) x.begin(),x.end()
+#define REP(i,a) for(int i = 0; i < a; ++i)
+#define DEP(i,a) for(int i = a-1; i >= 0; --i)
+#define CLR(a) memset(a, 0, sizeof a)
 ll n, H, ans = 0x7f7f7f7f7f7f7f7f;
 bool check(ll h) {
     ll need, ret;
     if (h > H) {
-        need = ll(1.0 * (h + H) * (h - H + 1) / 2 + 1.0 * (h + 1) * h / 2 - h);
+        need = (ll)(1.0 * (h + H) * (h - H + 1) / 2 + 1.0 * (h + 1) * h / 2 - h);
         ret = h - H + h;
     }
     else {
-        need = ll(1.0 * (h + 1) * h / 2);
+        need = (ll)(1.0 * (h + 1) * h / 2);
         ret = h;
     }
     if (need > n) return false;
@@ -41,6 +72,7 @@ int main() {
     printf("%lld\n", ans);
     return 0;
 }
+
 ```
 
 ## E.Pencils and Boxes
@@ -49,7 +81,7 @@ int main() {
 /*
  * Author:  JiangYu
  * Created Time:  2018/5/23 22:37:40
- * File Name: F.cpp
+ * File Name: E.cpp
  */
 #include <iostream>
 #include <cstdio>
@@ -212,3 +244,4 @@ int main() {
 
 ```
 ## G.Team Players
+恐怖的组合题，先挖坑，不知道能不能填上。
