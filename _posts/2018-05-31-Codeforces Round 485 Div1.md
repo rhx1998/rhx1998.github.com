@@ -124,3 +124,61 @@ int main() {
     return 0;
 }
 ```
+## C.AND Graph
+简单考虑一下，我们通过$dfs(a[i])$， 把$a[i]$能联通的点全部打上标记。记个数就是最后的联通块的数量了。
+那么怎么才能遍历到所有$a[i]$能联通的点呢？
+
+考虑到仅当 $ a&b == 0$ 时， $a$, $b$间才存在边，即某一个数字，在 $(a)_2$ 二进制的表示中，为$1$的位置上，全部为$0$.两点即存在边。
+那么我们用一$all = (1<<n)-1  ^ $上$a$,然后再通过$dfs$一次减去其中一个$1$就能合法的遍历完所有点了。
+
+
+```
+/*
+ * Author:  JiangYu
+ * Created Time:  2018/5/31 14:32:15
+ * File Name: C.cpp
+ */
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+#define MP make_pair
+#define PB push_back
+#define X first
+#define Y second
+#define FI first
+#define SE second
+#define inf 0x3f3f3f3f
+#define FOR(i,a,b) for(int i = a; i <= b; ++i)
+#define FORD(i,a,b) for(int i = b; i >= a; --i)
+#define ALL(x) x.begin(),x.end()
+#define REP(i,a) for(int i = 0; i < a; ++i)
+#define DEP(i,a) for(int i = a-1; i >= 0; --i)
+#define CLR(a) memset(a, 0, sizeof a)
+const int N = 5e6;
+int a[N], has[N], n, m;
+bool vis[N];
+int all, ans;
+void dfs(int u) {
+    if(vis[u]) return;
+    vis[u] = 1;
+    if(has[u]) dfs(all ^ u);
+    for(int i = 0; i <= n; ++i) if((1<<i) & u) 
+        dfs(u ^ (1<<i));
+}
+int main() {
+    scanf("%d%d", &n, &m);
+    all = (1<<n) - 1;
+    for(int i = 1; i <= m; ++i) {
+        scanf("%d", &a[i]);
+        has[a[i]] = 1;
+    }
+    for(int i = 1; i <= m; ++i) if(!vis[a[i]]){
+        ans++;
+        vis[a[i]] = 1;
+        dfs(all^a[i]);
+    }
+    printf("%d", ans);
+    return 0;
+}
+```
+
