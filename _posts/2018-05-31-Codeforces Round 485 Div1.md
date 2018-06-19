@@ -181,4 +181,9 @@ int main() {
     return 0;
 }
 ```
+## D.Perfect Encoding
+FFT找到一个最靠近$n$的$T = 3^x \leq n$,然后判断是对$T \times 2 or 3 or 4$.
 
+## E.
+
+## F.
